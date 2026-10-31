@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-bone: #1c1a17;
+    --bg-bone-light: #2b2621;
+    --bg-parchment-cream: #f4efe6;
+    --text-ectoplasm: #a8c3a0;
+    --text-witch-rose: #e0a899;
+    --text-candle-amber: #e8b058;
+    --border-sepia: #6e6259;
+    --border-sepia-dark: #423b34;
+    --ghost-white: #fdfbf7;
+  }
+
+  body {
+    background-color: #1c1a17;
+    color: #a8c3a0;
+    font-family: 'Courier Prime', monospace;
+  }
+}
+
+/* Custom Typography & Spectral Effects */
+.font-pixel {
+  font-family: 'VT323', monospace;
+}
+
+.font-terminal {
+  font-family: 'Courier Prime', 'Space Mono', monospace;
+}
+
+.font-altar {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+/* Candle Flicker Keyframes */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 0.95;
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 0 6px rgba(232, 176, 88, 0.7));
+  }
+  25% {
+    opacity: 0.8;
+    transform: scale(0.97) translateY(-1px) rotate(-1deg);
+    filter: drop-shadow(0 0 4px rgba(232, 176, 88, 0.5));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(1px) rotate(1deg);
+    filter: drop-shadow(0 0 9px rgba(232, 176, 88, 0.9));
+  }
+  75% {
+    opacity: 0.85;
+    transform: scale(0.95) translateY(0) rotate(-0.5deg);
+    filter: drop-shadow(0 0 5px rgba(232, 176, 88, 0.6));
+  }
+}
+
+.animate-candle {
+  animation: flicker 2.4s infinite ease-in-out;
+}
+
+.animate-candle-delay {
+  animation: flicker 2.8s infinite ease-in-out 0.6s;
+}
+
+/* Ethereal Floating Ghost */
+@keyframes ghostFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+.animate-ghost-float {
+  animation: ghostFloat 3.5s ease-in-out infinite;
+}
+
+/* Parchment Vignette & CRT scanlines */
+.parchment-vignette {
+  background: radial-gradient(circle at 50% 50%, rgba(43, 38, 33, 0.2) 0%, rgba(20, 18, 15, 0.85) 100%);
+}
+
+.spectral-glow {
+  text-shadow: 0 0 8px rgba(168, 195, 160, 0.45);
+}
+
+.amber-glow {
+  text-shadow: 0 0 8px rgba(232, 176, 88, 0.5);
+}
+
+.rose-glow {
+  text-shadow: 0 0 8px rgba(224, 168, 153, 0.5);
+}
+
+/* Custom Scrollbar for NecroTerm */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1a17;
+  border-left: 1px solid #423b34;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #423b34;
+  border-radius: 2px;
+  border: 1px solid #6e6259;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6e6259;
+}
